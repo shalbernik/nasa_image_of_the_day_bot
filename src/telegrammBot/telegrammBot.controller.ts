@@ -18,26 +18,18 @@ export class TelegrammBot {
 
 	constructor() {
 		this.bot = new Telegraf(TELEGRAMM_BOT_TOKEN);
-		console.log(TELEGRAMM_BOT_TOKEN);
 	}
 
 	public start(): void {
 
 		this.bot.start((ctx) => {
-			// console.log(ctx);
-			// console.log('started:', ctx.from.id);
-			return ctx.reply('Welcome!')
+			return ctx.reply('Welcome to Nasa Image Of The Day!')
 		});
-		this.bot.command('help', (ctx) => ctx.reply('Try send a sticker!'));
 		this.bot.command('apod', (ctx) => {
 			NasaService.getApod().then((apod: NasaApod): void => {
-				ctx.reply(apod.explanation);
+				ctx.replyWithHTML(`<strong>${apod.title}.</strong>${apod.explanation} ${apod.hdurl}`);
 			});
 		});
-		this.bot.hears('hi', (ctx) => ctx.reply('Hey there!'));
-		this.bot.hears(/buy/i, (ctx) => ctx.reply('Buy-buy!'));
-		this.bot.on('sticker', (ctx) => ctx.reply('👍'));
-
 		this.bot.startPolling();
 	}
 }

@@ -30,7 +30,6 @@ export class NasaService {
 			apod.service_version = apodDTO.service_version;
 			apod.title = apodDTO.title;
 			apod.url = apodDTO.url;
-			console.log(apodDTO);
 		});
 		return apod;
 	}
