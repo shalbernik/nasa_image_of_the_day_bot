@@ -16,7 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "request": "^2.81.0",
-    "request-promise": "^4.2.1"
+    "request-promise": "^4.2.1",
+    "telegraf": "^3.14.1"
   },
   "devDependencies": {
     "@types/npm": "^2.0.29",
