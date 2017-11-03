@@ -1,0 +1,25 @@
+{
+  "name": "nasa_image_of_the_day",
+  "version": "0.0.1",
+  "description": "NASA Image Of The Day",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build-ts && node dist/index.js",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w"
+  },
+  "keywords": [
+    "nasa_image_of_the_day"
+  ],
+  "author": "Dmitrii Uskov",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  },
+  "devDependencies": {
+    "@types/npm": "^2.0.29",
+    "typescript": "^2.5.2"
+  }
+}
